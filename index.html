@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>omma challenge</title>
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/generatemodal.css" />
+    <link rel="stylesheet" href="./assets/styles/editmodal.css" />
+    <link rel="stylesheet" href="./assets/styles/slider.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="title"><h2>Playlist</h2></div>
+        <div class="buttons">
+          <button class="generate" id="before-generate">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#ffffff"
+            >
+              <path d="M0 0h24v24H0V0z" fill="none" />
+              <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z" />
+            </svg>
+            <p>Generate</p>
+          </button>
+          <button class="addnew" id="addnew">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#ffffff"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+            <p>Add New</p>
+          </button>
+        </div>
+      </header>
+
+      <section class="feedback" id="feedback">
+        <div class="feedbackbox">
+          <p id="feedback-info">feedback text</p>
+          <span class="close" id="fbclose">x</span>
+        </div>
+      </section>
+
+      <section class="error" id="error">
+        <div class="error-card">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#a01c1c"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+            />
+          </svg>
+          <h4>Error !!!</h4>
+          <p id="errorinfo"></p>
+          <span class="close" id="errorclose">x</span>
+        </div>
+      </section>
+
+      <section class="lists" id="lists">
+        <table class="pool">
+          <thead></thead>
+          <tbody id="pool-list"></tbody>
+        </table>
+      </section>
+
+      <div class="edit-item-modal" id="edit-item">
+        <div class="modal-content">
+          <span class="close" id="editclose">&times;</span>
+          <div class="form-title">
+            <h4>edit item</h4>
+          </div>
+          <div class="edit-item-form">
+            <div class="form-item">
+              <label for="name">name</label>
+              <input
+                placeholder="text here"
+                type="text"
+                name="name"
+                id="name"
+                required
+              />
+            </div>
+            <div class="form-item">
+              <label for="url">url</label>
+              <input
+                placeholder="text here"
+                type="text"
+                name="url"
+                id="url"
+                required
+              />
+            </div>
+            <div class="form-item">
+              <label for="weight">weight</label>
+              <input
+                value="1"
+                type="number"
+                name="weight"
+                id="weight"
+                min="1"
+                max="10"
+              />
+            </div>
+            <div class="actions">
+              <button class="save" id="save">save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="results" id="results">
+        <header>
+          <div class="title">
+            <h2>playlist results</h2>
+          </div>
+          <div class="editplaylist">
+            <button id="btn-editlist">edit list</button>
+          </div>
+        </header>
+        <div class="results-list">
+          <ol id="result-list"></ol>
+        </div>
+      </section>
+
+      <section class="item-count" id="item-count">
+        <div class="itemstogenerate">
+          <h4 for="count">Please enter the length to generate.</h4>
+          <div class="generate-controls">
+            <input type="number" name="count" id="count" min="3" />
+            <button id="generatelistbutton">Generate</button>
+          </div>
+        </div>
+      </section>
+      <section class="carousel" id="carousel">
+        <div class="slideshow-container" id="slider">
+          <div class="arrows">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+        <br />
+        <div style="text-align: center" id="dots"></div>
+      </section>
+    </div>
+    <!-- <script src="bundle.js"></script> -->
+    <script src="./store.js"></script>
+    <script src="./assets/utils/createpool.js"></script>
+    <script src="./assets/utils/actions.js"></script>
+    <script src="./app.js"></script>
+    <script src="./assets/utils/edit.js"></script>
+    <script src="./assets/utils/createlist.js"></script>
+    <script src="./assets/utils/createslider.js"></script>
+    <script src="./assets/utils/generate.js"></script>
+    <script src="./assets/utils/slider.js"></script>
+  </body>
+</html>
